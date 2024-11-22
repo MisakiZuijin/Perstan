@@ -101,13 +101,15 @@ const HomePagePembeli = () => {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              strokeWidth="2"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
-                d="M3 3h18M9 21h6m-6 0a3 3 0 006 0H9zm0 0H3a3 3 0 006 0z"
+                d="M3 3h2l.4 2M7 13h10l3.6-7H5.4L7 13zm0 0l-1.35 2.7a1 1 0 00.9 1.5h11a1 1 0 00.9-1.5L17 13"
               />
+              <circle cx="7" cy="21" r="1" fill="currentColor" />
+              <circle cx="17" cy="21" r="1" fill="currentColor" />
             </svg>
           </button>
           <div className="flex items-center">
