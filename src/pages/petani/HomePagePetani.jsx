@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ProductCard from "../../components/ProductCard";
 
 
 const HomePagePetani = () => {
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const navigate = useNavigate();
+
   const products = [
     {
       id: 1,
@@ -27,6 +31,10 @@ const HomePagePetani = () => {
     },
   ];
 
+  const togglePopup = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
+
   const handleDelete = (id) => {
     console.log("Hapus produk dengan ID:", id);
   };
@@ -35,18 +43,55 @@ const HomePagePetani = () => {
     console.log("Edit produk dengan ID:", id);
   };
 
+  const handleLogout = () => {
+    navigate('/');
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen">
       {/* Header */}
       <header className="bg-yellow-400 p-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold text-white">Pertsan</h1>
         <div className="flex items-center">
           <img
-            src="/path/to/profile-image.png"
-            alt="Petani"
-            className="w-10 h-10 rounded-full border-2 border-white"
+            src="/assets/logo.png"
+            alt="Logo"
+            className="w-12 h-12 mr-2"
           />
-          <span className="ml-2 text-white font-medium">Petani Name</span>
+          <h1 className="text-xl font-bold text-white">PERSTAN</h1>
+        </div>
+        <div className="relative">
+          <div className="flex items-center cursor-pointer" onClick={togglePopup}>
+            <img
+              src="/path/to/profile-image.png"
+              alt="Petani"
+              className="w-10 h-10 rounded-full border-2 border-white"
+            />
+            <span className="ml-2 text-white font-medium">Petani Name</span>
+          </div>
+          {isPopupVisible && (
+            <div className="absolute right-0 mt-2 bg-white shadow-lg rounded-md w-40 z-10">
+              <ul className="py-2 text-gray-700">
+                <li
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={() => alert("Edit Profile")}
+                >
+                  Edit Profile
+                </li>
+                <li
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={() => alert("History")}
+                >
+                  History
+                </li>
+                <li
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                  onClick={() => handleLogout()}
+                >
+                  Logout
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
       </header>
 
