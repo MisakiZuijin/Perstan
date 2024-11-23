@@ -55,14 +55,13 @@ const HomePagePetani = () => {
           <img
             src="/assets/logo.png"
             alt="Logo"
-            className="w-12 h-12 mr-2"
+            className="w-20 h-20 mr-2"
           />
-          <h1 className="text-xl font-bold text-white">PERSTAN</h1>
         </div>
         <div className="relative">
           <div className="flex items-center cursor-pointer" onClick={togglePopup}>
             <img
-              src="/path/to/profile-image.png"
+              src="/assets/default-photo.jpg"
               alt="Petani"
               className="w-10 h-10 rounded-full border-2 border-white"
             />

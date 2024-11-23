@@ -93,6 +93,10 @@ const HomePagePembeli = () => {
     navigate('/');
   };
 
+  const handleEditProfile = () => {
+    navigate('/user-profile');
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen">
       {/* Header */}
@@ -151,7 +155,7 @@ const HomePagePembeli = () => {
           <div className="relative">
             <div className="flex items-center cursor-pointer" onClick={togglePopup}>
               <img
-                src="/path/to/profile-image.png"
+                src="/assets/default-photo.jpg"
                 alt="User"
                 className="w-8 h-8 rounded-full border-2 border-white"
               />
@@ -162,7 +166,7 @@ const HomePagePembeli = () => {
                   <ul className="py-2 text-gray-700">
                     <li
                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => alert("Edit Profile")}
+                      onClick={() => handleEditProfile()}
                     >
                       Edit Profile
                     </li>

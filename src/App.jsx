@@ -4,6 +4,7 @@ import LoginPage from "./pages/auth/Login"
 import SignUpPage from "./pages/auth/SignUpPage"
 import HomePagePembeli from "./pages/Pembeli/HomePagePembeli"
 import HomePagePetani from "./pages/petani/HomePagePetani"
+import EditProfile from "./pages/Pembeli/Profile/UserProfile"
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/home-pembeli",
     element: <HomePagePembeli />,
+  },
+  {
+    path: "/user-profile",
+    element: <EditProfile />,
   },
   {
     path: "/home-petani",
