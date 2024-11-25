@@ -32,15 +32,14 @@ const EditProfile = () => {
       {/* Header */}
       <header className="bg-yellow-400 p-4 flex justify-between items-center rounded-br-full mr-3.5">
         <div className="flex items-center">
-          <img src="/assets/logo.png" alt="Logo" className="w-12 h-12 mr-2" />
-          <h1 className="text-xl font-bold text-white">PERSTAN</h1>
+          <img src="/assets/logo.png" alt="Logo" className="w-20 h-20 mr-2" />
         </div>
       </header>
 
       {/* Main Content */}
       <main className="flex-1 p-6">
         <div className="max-w-lg mx-auto bg-white p-6 rounded-md shadow-md">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">Edit Profile</h2>
+          <h2 className="text-center text-xl font-bold text-gray-800 mb-4">Edit Profile</h2>
           {/* Profile Picture */}
           <div className="flex flex-col items-center mb-6">
             <img

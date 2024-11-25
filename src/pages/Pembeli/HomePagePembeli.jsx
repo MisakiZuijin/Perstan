@@ -13,56 +13,56 @@ const HomePagePembeli = () => {
       name: "Beras Rojo Lele",
       price: 15000,
       sold: "200 KG",
-      imageUrl: "./public/assets/beras-rojo-lele.jpg",
+      imageUrl: "/assets/beras-rojo-lele.jpg",
     },
     {
       id: 2,
       name: "Beras Rojo Iwak",
       price: 15000,
       sold: "200 KG",
-      imageUrl: "./public/assets/beras-rojo-lele.jpg",
+      imageUrl: "/assets/beras-rojo-lele.jpg",
     },
     {
       id: 3,
       name: "Beras Rojo Lele",
       price: 15000,
       sold: "200 KG",
-      imageUrl: "./public/assets/beras-rojo-lele.jpg",
+      imageUrl: "/assets/beras-rojo-lele.jpg",
     },
     {
       id: 4,
       name: "Beras Rojo Lele",
       price: 15000,
       sold: "200 KG",
-      imageUrl: "./public/assets/beras-rojo-lele.jpg",
+      imageUrl: "/assets/beras-rojo-lele.jpg",
     },
     {
       id: 5,
       name: "Beras Rojo Lele",
       price: 15000,
       sold: "200 KG",
-      imageUrl: "./public/assets/beras-rojo-lele.jpg",
+      imageUrl: "/assets/beras-rojo-lele.jpg",
     },
     {
       id: 6,
       name: "Beras Rojo Lele",
       price: 15000,
       sold: "200 KG",
-      imageUrl: "./public/assets/beras-rojo-lele.jpg",
+      imageUrl: "/assets/beras-rojo-lele.jpg",
     },
         {
       id: 7,
       name: "Beras Rojo Lele",
       price: 15000,
       sold: "200 KG",
-      imageUrl: "./public/assets/beras-rojo-lele.jpg",
+      imageUrl: "/assets/beras-rojo-lele.jpg",
     },
         {
       id: 8,
       name: "Beras Rojo Lele",
       price: 15000,
       sold: "200 KG",
-      imageUrl: "./public/assets/beras-rojo-lele.jpg",
+      imageUrl: "/assets/beras-rojo-lele.jpg",
     },
   ];
 
@@ -100,16 +100,15 @@ const HomePagePembeli = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
       {/* Header */}
-      <header className="bg-yellow-400 p-4 flex justify-between items-center">
+      <header className="bg-yellow-400 p-4 rounded-br-full mr-3.5 flex justify-between items-center">
         <div className="flex items-center">
           <img
             src="/assets/logo.png"
             alt="Logo"
-            className="w-12 h-12 mr-2"
+            className="w-20 h-20 mr-2"
           />
-          <h1 className="text-xl font-bold text-white">PERSTAN</h1>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 mr-5">
           <input
             type="text"
             placeholder="Cari produk..."
@@ -212,7 +211,8 @@ const HomePagePembeli = () => {
                   <p className="text-gray-500 text-sm mt-2">
                     {product.sold} Terjual
                   </p>
-                  <button className="mt-4 px-4 py-2 bg-green-500 text-white text-sm rounded hover:bg-green-600">
+                  <button className="mt-4 px-4 py-2 bg-green-500 text-white text-sm rounded hover:bg-green-600"
+                   onClick={() => navigate(`/product-detail/${product.id}`, { state: product })}>
                     Beli
                   </button>
                 </div>
@@ -220,6 +220,10 @@ const HomePagePembeli = () => {
             )}
         </div>
       </main>
+
+      <footer className="bg-gray-400 border-t p-4 text-left text-gray-800">
+        &copy; 2024 Your Company. All Rights Reserved.
+      </footer>
     </div>
   );
 };

@@ -116,6 +116,10 @@ const HomePagePetani = () => {
           ))}
         </div>
       </main>
+      
+      <footer className="bg-gray-400 border-t p-4 text-left text-gray-800">
+        &copy; 2024 Your Company. All Rights Reserved.
+      </footer>
     </div>
   );
 };

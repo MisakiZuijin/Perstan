@@ -4,7 +4,8 @@ import LoginPage from "./pages/auth/Login"
 import SignUpPage from "./pages/auth/SignUpPage"
 import HomePagePembeli from "./pages/Pembeli/HomePagePembeli"
 import HomePagePetani from "./pages/petani/HomePagePetani"
-import EditProfile from "./pages/Pembeli/Profile/UserProfile"
+import EditProfile from "./pages/Pembeli/UserProfile"
+import ProductDetail from "./pages/Pembeli/ProductDetail.jsx"
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/user-profile",
     element: <EditProfile />,
+  },
+  {
+    path: "/product-detail/:id",
+    element: <ProductDetail />,
   },
   {
     path: "/home-petani",
