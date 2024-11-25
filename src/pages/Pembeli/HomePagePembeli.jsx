@@ -11,57 +11,81 @@ const HomePagePembeli = () => {
     {
       id: 1,
       name: "Beras Rojo Lele",
+      location: "Karanganyar",
       price: 15000,
       sold: "200 KG",
+      stock: "500 KG",
+      description: "Beras Rojo Lele Dengan Kualitas Terbaik",
       imageUrl: "/assets/beras-rojo-lele.jpg",
     },
     {
       id: 2,
-      name: "Beras Rojo Iwak",
+      name: "Beras Rojo Lele",
+      location: "Karanganyar",
       price: 15000,
       sold: "200 KG",
+      stock: "500 KG",
+      description: "Beras Rojo Lele Dengan Kualitas Terbaik",
       imageUrl: "/assets/beras-rojo-lele.jpg",
     },
     {
       id: 3,
       name: "Beras Rojo Lele",
+      location: "Karanganyar",
       price: 15000,
       sold: "200 KG",
+      stock: "500 KG",
+      description: "Beras Rojo Lele Dengan Kualitas Terbaik",
       imageUrl: "/assets/beras-rojo-lele.jpg",
     },
     {
       id: 4,
       name: "Beras Rojo Lele",
+      location: "Karanganyar",
       price: 15000,
       sold: "200 KG",
+      stock: "500 KG",
+      description: "Beras Rojo Lele Dengan Kualitas Terbaik",
       imageUrl: "/assets/beras-rojo-lele.jpg",
     },
     {
       id: 5,
       name: "Beras Rojo Lele",
+      location: "Karanganyar",
       price: 15000,
       sold: "200 KG",
+      stock: "500 KG",
+      description: "Beras Rojo Lele Dengan Kualitas Terbaik",
       imageUrl: "/assets/beras-rojo-lele.jpg",
     },
     {
       id: 6,
       name: "Beras Rojo Lele",
+      location: "Karanganyar",
       price: 15000,
       sold: "200 KG",
+      stock: "500 KG",
+      description: "Beras Rojo Lele Dengan Kualitas Terbaik",
       imageUrl: "/assets/beras-rojo-lele.jpg",
     },
         {
       id: 7,
       name: "Beras Rojo Lele",
+      location: "Karanganyar",
       price: 15000,
       sold: "200 KG",
+      stock: "500 KG",
+      description: "Beras Rojo Lele Dengan Kualitas Terbaik",
       imageUrl: "/assets/beras-rojo-lele.jpg",
     },
         {
       id: 8,
       name: "Beras Rojo Lele",
+      location: "Karanganyar",
       price: 15000,
       sold: "200 KG",
+      stock: "500 KG",
+      description: "Beras Rojo Lele Dengan Kualitas Terbaik",
       imageUrl: "/assets/beras-rojo-lele.jpg",
     },
   ];
@@ -97,10 +121,14 @@ const HomePagePembeli = () => {
     navigate('/user-profile');
   };
 
+  const handleCart = () => {
+    navigate('/Cart')
+  }
+
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 min-h-screen scroll-smooth">
       {/* Header */}
-      <header className="bg-yellow-400 p-4 rounded-br-full mr-3.5 flex justify-between items-center">
+      <header className="bg-gradient-to-br from-yellow-200 from-25% via-yellow-300 via-40% to-yellow-600 to-85% p-4 rounded-br-full mr-3.5 flex justify-between items-center">
         <div className="flex items-center">
           <img
             src="/assets/logo.png"
@@ -141,6 +169,7 @@ const HomePagePembeli = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth="2"
+              onClick={handleCart}
             >
               <path
                 strokeLinecap="round"
@@ -221,7 +250,7 @@ const HomePagePembeli = () => {
         </div>
       </main>
 
-      <footer className="bg-gray-400 border-t p-4 text-left text-gray-800">
+      <footer className="bg-gray-700 border-t p-4 text-left text-white">
         &copy; 2024 Your Company. All Rights Reserved.
       </footer>
     </div>

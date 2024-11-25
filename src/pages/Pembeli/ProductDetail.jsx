@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useCart } from "./cartcontext/CartContext";
 
 const ProductDetail = () => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const { addToCart } = useCart();
   const navigate = useNavigate();
   const location = useLocation();
   const product = location.state || {}; // Mendapatkan data produk dari `state`
@@ -24,6 +26,15 @@ const ProductDetail = () => {
     setIsPopupVisible(!isPopupVisible);
   };
 
+  const handleAddToCart = () => {
+    addToCart(product); // Hanya mengirim data produk, tanpa quantity tambahan
+    alert(`Produk "${product.name}" berhasil ditambahkan ke keranjang!`);
+  };  
+
+  const handleCart = () => {
+    navigate('/Cart')
+  }
+
   const totalPrice = product.price * quantity;
 
   // Fungsi untuk menangani pembayaran
@@ -36,9 +47,9 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex flex-col">
+    <div className="bg-gray-100 min-h-screen flex flex-col scroll-smooth">
       {/* Header */}
-      <header className="bg-yellow-400 p-4 rounded-br-full mr-3.5 flex justify-between items-center">
+      <header className="bg-gradient-to-br from-yellow-200 from-25% via-yellow-300 via-40% to-yellow-600 to-85% p-4 rounded-br-full mr-3.5 flex justify-between items-center">
       <div className="flex items-center">
           <img
             src="/assets/logo.png"
@@ -55,6 +66,7 @@ const ProductDetail = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth="2"
+              onClick={handleCart}
             >
               <path
                 strokeLinecap="round"
@@ -116,12 +128,25 @@ const ProductDetail = () => {
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
                 {product.name}
               </h2>
-              <p className="text-gray-500 mb-4">
-                {product.sold} Terjual
+              <p className="text-black mb-4">
+                {product.location}
               </p>
+              <div className="flex flex-row gap-10">
+                <h3 className="text-gray-500 mb-4">
+                  {product.sold} Terjual
+                </h3>
+                <p className="text-gray-500 mb-4">
+                  {product.stock} Stock
+                </p>
+              </div>
               <p className="text-gray-700 text-lg font-bold">
                 Rp {product.price.toLocaleString()}
               </p>
+              <div className="w-96 h-24 p-2 mt-6 overflow-scroll scrollbar-hidden ... rounded-lg shadow-md bg-gray-100">
+                <p>
+                  {product.description}
+                </p>
+              </div>
             </div>
           </div>
 
@@ -188,13 +213,19 @@ const ProductDetail = () => {
           <div className="mt-10 flex gap-4 justify-center">
             <button
               onClick={() => navigate(-1)}
-              className="px-6 py-2 w-40 bg-gray-400 text-white rounded hover:bg-gray-500"
+              className="px-6 py-2 w-48 bg-gray-400 text-white rounded shadow-md ease-in duration-300 hover:bg-gray-500"
             >
               Kembali
             </button>
             <button
+              onClick={handleAddToCart}
+              className="px-6 py-2 w-48 bg-green-500 text-white rounded shadow-md ease-in duration-300 hover:bg-green-600"
+            >
+              Tambah Keranjang
+            </button>
+            <button
               onClick={handlePayment}
-              className="px-6 py-2 w-40 bg-green-500 text-white rounded hover:bg-green-600"
+              className="px-6 py-2 w-48 bg-green-500 text-white rounded shadow-md ease-in duration-300 hover:bg-green-600"
             >
               Bayar Sekarang
             </button>
@@ -202,7 +233,7 @@ const ProductDetail = () => {
         </div>
       </main>
 
-      <footer className="bg-gray-400 border-t p-4 text-left text-gray-800">
+      <footer className="bg-gray-700 border-t p-4 text-left text-white">
         &copy; 2024 Your Company. All Rights Reserved.
       </footer>
     </div>

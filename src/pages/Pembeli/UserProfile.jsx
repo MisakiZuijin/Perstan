@@ -28,9 +28,9 @@ const EditProfile = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-gray-100 scroll-smooth">
       {/* Header */}
-      <header className="bg-yellow-400 p-4 flex justify-between items-center rounded-br-full mr-3.5">
+      <header className="bg-gradient-to-br from-yellow-200 from-25% via-yellow-300 via-40% to-yellow-600 to-85% p-4 flex justify-between items-center rounded-br-full mr-3.5">
         <div className="flex items-center">
           <img src="/assets/logo.png" alt="Logo" className="w-20 h-20 mr-2" />
         </div>
@@ -133,7 +133,7 @@ const EditProfile = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-400 border-t p-4 text-left text-gray-800">
+      <footer className="bg-gray-700 border-t p-4 text-left text-white">
         &copy; 2024 Your Company. All Rights Reserved.
       </footer>
     </div>

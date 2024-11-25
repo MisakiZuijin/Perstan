@@ -48,9 +48,9 @@ const HomePagePetani = () => {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gray-100 min-h-screen scroll-smooth">
       {/* Header */}
-      <header className="bg-yellow-400 p-4 flex justify-between items-center">
+      <header className="bg-gradient-to-br from-yellow-200 from-25% via-yellow-300 via-40% to-yellow-600 to-85% p-4 flex justify-between items-center">
         <div className="flex items-center">
           <img
             src="/assets/logo.png"
@@ -117,7 +117,7 @@ const HomePagePetani = () => {
         </div>
       </main>
       
-      <footer className="bg-gray-400 border-t p-4 text-left text-gray-800">
+      <footer className="bg-gray-700 border-t p-4 text-left text-white">
         &copy; 2024 Your Company. All Rights Reserved.
       </footer>
     </div>
