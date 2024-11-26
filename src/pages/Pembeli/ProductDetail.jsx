@@ -32,19 +32,20 @@ const ProductDetail = () => {
   };  
 
   const handleCart = () => {
-    navigate('/Cart')
+    navigate('/cart')
   }
 
-  const totalPrice = product.price * quantity;
+  const handleHistory = () => {
+    navigate('/history')
+  }
 
-  // Fungsi untuk menangani pembayaran
   const handlePayment = () => {
-    if (paymentMethod === "COD") {
-      alert("Pesanan Anda telah dikonfirmasi menggunakan metode COD.");
-    } else if (paymentMethod === "Transfer") {
-      alert("Invoice pembayaran Anda telah dibuat.");
-    }
+    navigate("/confirmation", {
+      state: { product, quantity, paymentMethod },
+    });
   };
+
+  const totalPrice = product.price * quantity;
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col scroll-smooth">
@@ -97,7 +98,7 @@ const ProductDetail = () => {
                     </li>
                     <li
                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => alert("History")}
+                      onClick={() => handleHistory()}
                     >
                       History
                     </li>

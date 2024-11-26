@@ -73,6 +73,7 @@ const HomePagePembeli = () => {
       name: "Beras Rojo Lele",
       location: "Karanganyar",
       price: 15000,
+      shippingcost: 20000,
       sold: "200 KG",
       stock: "500 KG",
       description: "Beras Rojo Lele Dengan Kualitas Terbaik",
@@ -122,7 +123,11 @@ const HomePagePembeli = () => {
   };
 
   const handleCart = () => {
-    navigate('/Cart')
+    navigate('/cart')
+  }
+
+  const handleHistory = () => {
+    navigate('/history')
   }
 
   return (
@@ -200,7 +205,7 @@ const HomePagePembeli = () => {
                     </li>
                     <li
                       className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                      onClick={() => alert("History")}
+                      onClick={() => handleHistory()}
                     >
                       History
                     </li>

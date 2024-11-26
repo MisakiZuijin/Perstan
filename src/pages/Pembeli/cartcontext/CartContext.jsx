@@ -17,10 +17,10 @@ export const CartProvider = ({ children }) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
   };
 
-  const updateCartQuantity = (id, quantity) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.id === id ? { ...item, quantity } : item
+  const updateCartQuantity = (id, newQuantity) => {
+    setCartItems(prevItems => 
+      prevItems.map(item =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
       )
     );
   };
